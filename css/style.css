@@ -6,3 +6,38 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* All elements will have no padding or margin */
+/* The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not. */
+/*   box-sizing: border-box === border and padding are no longer added to element */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Applying properties to whole body */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font: size 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+
+/* header will  occupy 95% of the viewport size*/
+/* The background-position property sets the starting position of a background image. */
+/* The background-size property specifies the size of the background images. */
+/* There are four different syntaxes you can use with this property: the keyword syntax 
+("auto", "cover" and "contain"), the one-value syntax (sets the width of the image (height becomes "auto"), 
+the two-value syntax (first value: width of the image, second value: height), and the multiple background syntax 
+(separated with comma). */
+.header{
+  height: 95vh;
+  background-image:linear-gradient(to right bottom,#7ed56fc7,#28b485b0), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path:polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+}
