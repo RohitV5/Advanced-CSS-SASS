@@ -69,8 +69,14 @@ the two-value syntax (first value: width of the image, second value: height), an
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
-
+  animation-name: moveInLeft;
+  animation-duration: 2s
 }
+
+/* animation name is the keyframe animation name we created */
+/* animation duration.. the time it takes to complete the animation */
+/* animation delay is after how much time the animation starts */
+/*  */
 
 
 .heading-primary-sub {
@@ -78,6 +84,8 @@ the two-value syntax (first value: width of the image, second value: height), an
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17px;
+  animation-name: moveInRight;
+  animation-duration: 2s
 }
 
 
@@ -91,4 +99,44 @@ the two-value syntax (first value: width of the image, second value: height), an
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+/* keyframes are used for animation */
+/*  0% is the initial state 100% is the final state */
+/* so at initail state we want content to be hidden hence opacity is 0 and at final state we want it be completely visible */
+/* remember that elements come from the left */
+/* transform x means moving from righ  to left and if minus then opposite and transform y means top to bottom and minus means opposite */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px)
+  }
+
+  80% {
+    transform: translateX(20px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0)
+  }
+}
+
+
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px)
+  }
+
+  80% {
+    transform: translateX(-20px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0)
+  }
 }
