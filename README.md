@@ -19,3 +19,9 @@ SASS gives us variables , nesting, operators, partails and imports, mixins and f
 
 
 DRY principle : Dont repeat yourself use @mixin sass
+
+
+
+SCRIPT to Compile SASS --> node-sass sass/main.scss css/style.css -w
+Take main.scss from sass folder and make a style.css in css folder. Voila! Simple. 
+-w is watch flag which watches any scss changes

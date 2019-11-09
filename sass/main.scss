@@ -9,6 +9,14 @@ Dark green: #28b485
 
 NOTE: Valid css is also valid scss
 */
+
+$color-primary:#7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+$color-grey-dark:#777;
+$color-white:#fff;
+$color-black:#000;
+
 /* All elements will have no padding or margin */
 /* The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not. */
 /*   box-sizing: border-box === border and padding are no longer added to element */
@@ -17,24 +25,30 @@ NOTE: Valid css is also valid scss
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
 
 /* default font size is 16px set by browser, to set it 10px we use percenatge because then user can zoom in out to inc dec font so 10/16*100  */
 /* so below 1 rem is 10px because we set font-size as 10px in html tag, by default it is 16px */
+
 html {
-  font-size: 62.5%; }
+    font-size: 62.5%;
+}
 
 /* Applying properties to whole body */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font: size 1.6rem;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font: size 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
 
 /* header will  occupy 95% of the viewport size*/
 /* The background-position property sets the starting position of a background image. */
@@ -44,58 +58,74 @@ body {
 the two-value syntax (first value: width of the image, second value: height), and the multiple background syntax 
 (separated with comma). */
 .header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+}
+
+
 
 /* parent header should be referenced to calculate top and left, so parent should be set as position: relative */
 .header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
 
 .header__logo {
-  height: 3.5rem; }
+    height: 3.5rem;
+}
+
 
 .heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 1rem; }
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 1rem
+}
 
 /* block elements acquire entire width and give a line break so we use that for arranging header at center */
 .heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 2s; }
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s
+}
 
 /* animation name is the keyframe animation name we created */
 /* animation duration.. the time it takes to complete the animation */
 /* animation delay is after how much time the animation starts */
 /*  */
+
+
 .heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.7rem;
-  animation-name: moveInRight;
-  animation-duration: 2s; }
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation-name: moveInRight;
+    animation-duration: 2s
+}
+
 
 /* Best way to algin a div horiz and vert inside another div */
 /* position is absolute in relation to parent element, parent should have position:relative for this to work */
+
 /* NOTE:: You should also note that, if an absolutely positioned element is not a descendant of a positioned 
 (be it absolute, fixed, relative or sticky) element then its positions are set relative to the viewport. */
 .header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 
 /* keyframes are used for animation */
 /*  0% is the initial state 100% is the final state */
@@ -103,50 +133,76 @@ the two-value syntax (first value: width of the image, second value: height), an
 /* remember that elements come from the left */
 /* transform x means moving from righ  to left and if minus then opposite and transform y means top to bottom and minus means opposite */
 @keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(2rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem)
+    }
+
+    80% {
+        transform: translateX(2rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+
 
 @keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-2rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
+    0% {
+        opacity: 0;
+        transform: translateX(10rem)
+    }
+
+    80% {
+        transform: translateX(-2rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
 
 /* link is a pseudo class which is applied on btn class */
 .btn:link,
 .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  animation: all .2x;
-  font-size: 1.6rem; }
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    animation: all .2x;
+    font-size: 1.6rem;
+}
+
 
 /* on button hover this class gets activated */
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2)
+}
+
 
 /* on button click this class gets activated */
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 2rem rgba($color-black, .2);
+}
+
+
+
+
 
 .btn--white {
-  background-color: #fff;
-  color: #777; }
+    background-color: $color-white;
+    color: $color-grey-dark;
+}
 
+// 
 .btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}

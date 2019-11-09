@@ -4,7 +4,7 @@
   "description": "Using CSS and SASS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile-sass": "node-sass sass/main.scss css/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,5 @@
   "homepage": "https://github.com/RohitV5/Advanced-CSS-SASS#readme",
   "devDependencies": {
     "node-sass": "^4.13.0"
-  },
-  "dependencies": {
-    "jquery": "^3.4.1"
   }
 }
