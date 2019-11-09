@@ -10,20 +10,33 @@ Dark green: #28b485
 /* All elements will have no padding or margin */
 /* The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not. */
 /*   box-sizing: border-box === border and padding are no longer added to element */
-* {
+/* box sizing inherited from body tag which we have set as border box allowing height and width to include padding as a part of total */
+/* applying default style for pseudo elements too because * tag wont do it for pseudo */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+
+/* default font size is 16px set by browser, to set it 10px we use percenatge because then user can zoom in out to inc dec font so 10/16*100  */
+/* so below 1 rem is 10px because we set font-size as 10px in html tag, by default it is 16px */
+
+html {
+  font-size: 62.5%;
 }
 
 /* Applying properties to whole body */
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font: size 16px;
+  font: size 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 
@@ -46,30 +59,30 @@ the two-value syntax (first value: width of the image, second value: height), an
 
 
 /* parent header should be referenced to calculate top and left, so parent should be set as position: relative */
-.logo-box {
+.header__logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 
-.logo {
-  height: 35px;
+.header__logo {
+  height: 3.5rem;
 }
 
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 10px
+  margin-bottom: 1rem
 }
 
 /* block elements acquire entire width and give a line break so we use that for arranging header at center */
-.heading-primary-main {
+.heading-primary--main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 2s
 }
@@ -80,11 +93,11 @@ the two-value syntax (first value: width of the image, second value: height), an
 /*  */
 
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17px;
+  letter-spacing: 1.7rem;
   animation-name: moveInRight;
   animation-duration: 2s
 }
@@ -95,7 +108,7 @@ the two-value syntax (first value: width of the image, second value: height), an
 
 /* NOTE:: You should also note that, if an absolutely positioned element is not a descendant of a positioned 
 (be it absolute, fixed, relative or sticky) element then its positions are set relative to the viewport. */
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -112,11 +125,11 @@ the two-value syntax (first value: width of the image, second value: height), an
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px)
+    transform: translateX(-10rem)
   }
 
   80% {
-    transform: translateX(20px)
+    transform: translateX(2rem)
   }
 
   100% {
@@ -130,11 +143,11 @@ the two-value syntax (first value: width of the image, second value: height), an
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px)
+    transform: translateX(10rem)
   }
 
   80% {
-    transform: translateX(-20px)
+    transform: translateX(-2rem)
   }
 
   100% {
@@ -148,31 +161,38 @@ the two-value syntax (first value: width of the image, second value: height), an
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   animation: all .2x;
+  font-size: 1.6rem;
 }
 
 
 /* on button hover this class gets activated */
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2)
 }
 
 
 /* on button click this class gets activated */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+  box-shadow: 0 .5rem 2rem rgba(0, 0, 0, .2);
 }
 
 
 
 
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
+}
+
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
 }
