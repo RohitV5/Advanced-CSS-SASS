@@ -61,6 +61,7 @@ the two-value syntax (first value: width of the image, second value: height), an
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 10px
 }
 
 /* block elements acquire entire width and give a line break so we use that for arranging header at center */
@@ -99,6 +100,7 @@ the two-value syntax (first value: width of the image, second value: height), an
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 
@@ -139,4 +141,38 @@ the two-value syntax (first value: width of the image, second value: height), an
     opacity: 1;
     transform: translate(0)
   }
+}
+
+/* link is a pseudo class which is applied on btn class */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  animation: all .2x;
+}
+
+
+/* on button hover this class gets activated */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+}
+
+
+/* on button click this class gets activated */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+}
+
+
+
+
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
