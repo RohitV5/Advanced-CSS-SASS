@@ -54,10 +54,6 @@ the two-value syntax (first value: width of the image, second value: height), an
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* parent header should be referenced to calculate top and left, so parent should be set as position: relative */
-  /* Best way to algin a div horiz and vert inside another div */
-  /* position is absolute in relation to parent element, parent should have position:relative for this to work */
-  /* NOTE:: You should also note that, if an absolutely positioned element is not a descendant of a positioned 
-  (be it absolute, fixed, relative or sticky) element then its positions are set relative to the viewport. */
 }
 .header__logo-box {
   position: absolute;
@@ -67,21 +63,15 @@ the two-value syntax (first value: width of the image, second value: height), an
 .header__logo {
   height: 3.5rem;
 }
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  /* block elements acquire entire width and give a line break so we use that for arranging header at center */
 }
-.heading-primary-primary--main {
+
+/* block elements acquire entire width and give a line break so we use that for arranging header at center */
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -101,6 +91,18 @@ the two-value syntax (first value: width of the image, second value: height), an
   letter-spacing: 1.7rem;
   animation-name: moveInRight;
   animation-duration: 2s;
+}
+
+/* Best way to algin a div horiz and vert inside another div */
+/* position is absolute in relation to parent element, parent should have position:relative for this to work */
+/* NOTE:: You should also note that, if an absolutely positioned element is not a descendant of a positioned 
+(be it absolute, fixed, relative or sticky) element then its positions are set relative to the viewport. */
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 /* keyframes are used for animation */
@@ -134,12 +136,19 @@ the two-value syntax (first value: width of the image, second value: height), an
     transform: translate(0);
   }
 }
-.btn {
-  /* link is a pseudo class which is applied on btn class */
-  /* on button hover this class gets activated */
-  /* on button click this class gets activated */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
-.btn:link, .btn:visited {
+/* link is a pseudo class which is applied on btn class */
+.btn:link,
+.btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -147,39 +156,49 @@ the two-value syntax (first value: width of the image, second value: height), an
   border-radius: 10rem;
   animation: all 0.2x;
   font-size: 1.6rem;
+  position: relative;
 }
+
+/* on button hover this class gets activated */
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+
+/* on button click this class gets activated */
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 }
+
 .btn::after {
   content: "";
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 10rem;
+  border-radius: 100px;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   transition: all 0.4s;
 }
-.btn--white {
+
+.btn-white::after {
   background-color: #fff;
 }
-.btn--white::after {
+
+.btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-.btn--animated {
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn-animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
