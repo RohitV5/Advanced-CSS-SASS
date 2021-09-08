@@ -4,7 +4,7 @@
   "description": "Using CSS and SASS",
   "main": "index.js",
   "scripts": {
-    "compile-sass": "node-sass sass/main.scss css/style.css -w"
+    "compile-sass": "sass sass/main.scss css/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/RohitV5/Advanced-CSS-SASS#readme",
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "sass": "^1.39.0"
+  },
+  "dependencies": {
+
   }
 }

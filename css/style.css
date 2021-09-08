@@ -19,12 +19,14 @@ NOTE: Valid css is also valid scss
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /* default font size is 16px set by browser, to set it 10px we use percenatge because then user can zoom in out to inc dec font so 10/16*100  */
 /* so below 1 rem is 10px because we set font-size as 10px in html tag, by default it is 16px */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 /* Applying properties to whole body */
 body {
@@ -34,7 +36,8 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* header will  occupy 95% of the viewport size*/
 /* The background-position property sets the starting position of a background image. */
@@ -49,21 +52,23 @@ the two-value syntax (first value: width of the image, second value: height), an
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-/* parent header should be referenced to calculate top and left, so parent should be set as position: relative */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* parent header should be referenced to calculate top and left, so parent should be set as position: relative */
+}
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
-
+  left: 4rem;
+}
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 /* block elements acquire entire width and give a line break so we use that for arranging header at center */
 .heading-primary--main {
@@ -72,7 +77,8 @@ the two-value syntax (first value: width of the image, second value: height), an
   font-weight: 400;
   letter-spacing: 3.5rem;
   animation-name: moveInLeft;
-  animation-duration: 2s; }
+  animation-duration: 2s;
+}
 
 /* animation name is the keyframe animation name we created */
 /* animation duration.. the time it takes to complete the animation */
@@ -84,7 +90,8 @@ the two-value syntax (first value: width of the image, second value: height), an
   font-weight: 700;
   letter-spacing: 1.7rem;
   animation-name: moveInRight;
-  animation-duration: 2s; }
+  animation-duration: 2s;
+}
 
 /* Best way to algin a div horiz and vert inside another div */
 /* position is absolute in relation to parent element, parent should have position:relative for this to work */
@@ -95,7 +102,8 @@ the two-value syntax (first value: width of the image, second value: height), an
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 /* keyframes are used for animation */
 /*  0% is the initial state 100% is the final state */
@@ -105,23 +113,29 @@ the two-value syntax (first value: width of the image, second value: height), an
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
   80% {
-    transform: translateX(2rem); }
+    transform: translateX(2rem);
+  }
   100% {
     opacity: 1;
-    transform: translate(0); } }
-
+    transform: translate(0);
+  }
+}
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
   80% {
-    transform: translateX(-2rem); }
+    transform: translateX(-2rem);
+  }
   100% {
     opacity: 1;
-    transform: translate(0); } }
-
+    transform: translate(0);
+  }
+}
 /* link is a pseudo class which is applied on btn class */
 .btn:link,
 .btn:visited {
@@ -130,23 +144,30 @@ the two-value syntax (first value: width of the image, second value: height), an
   padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
-  animation: all .2x;
-  font-size: 1.6rem; }
+  animation: all 0.2x;
+  font-size: 1.6rem;
+}
 
 /* on button hover this class gets activated */
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
 /* on button click this class gets activated */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
 
 .btn--white {
   background-color: #fff;
-  color: #777; }
+  color: #777;
+}
 
 .btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+/*# sourceMappingURL=style.css.map */
